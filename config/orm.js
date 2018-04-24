@@ -15,7 +15,13 @@ var orm = {
 				cb(data)
 			})
 	},
-	updateOne: function()
+	updateOne: function(tableName, condtion, cb){
+		connection.query("UPDATE" + tableName + "SET devoured = TRUE WHERE" + condition,
+			function(err, data){
+				if(err) throw err;
+				cb(data)
+			})
+	}
 }
 
 
