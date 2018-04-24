@@ -17,3 +17,5 @@ var Burger = {
 		})
 	}
 }
+
+module.exports = Burger;
