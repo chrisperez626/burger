@@ -9,14 +9,15 @@ var orm = {
 		})
 	},
 	insertOne: function(tableName, colName, values, cb){
-		connection.query("INSERT INTO" + tableName + "(" + colName + ") VALUES(" + values+ ")",  
+		connection.query("INSERT INTO " + tableName + "("+ colName +") VALUE(?)",[values],  
 			function(err, data){
+				console.log(values);
 				if(err) throw err;
 				cb(data)
 			})
 	},
-	updateOne: function(tableName, condtion, cb){
-		connection.query("UPDATE" + tableName + "SET devoured = TRUE WHERE" + condition,
+	updateOne: function(tableName, condition, cb){
+		connection.query("UPDATE " + tableName + " SET devoured = TRUE WHERE " + condition,
 			function(err, data){
 				if(err) throw err;
 				cb(data)

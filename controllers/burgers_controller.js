@@ -10,14 +10,16 @@ router.get("/", function(req, res){
 })
 
 router.post("/api/burgers", function(req, res){
-	Burger.create("burger_name", req.body, function(result){
+	Burger.create("burger_name", req.body.name, function(result){
 		res.json({id: result.insertId})
 	})
 })
 
 router.put("/api/burgers/:id", function(req, res){
 	Burger.eat("id = " + req.params.id, function(result){
-		if (result.changedRows == 0) {
+		console.log(result);
+		
+		if (result.affectedRows == 0) {
       		return res.status(404).end();
     	} else {
       		res.status(200).end();
