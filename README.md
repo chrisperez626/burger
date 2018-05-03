@@ -1,6 +1,6 @@
 # burger
 
-###Welcome to the my first full stack app!!!
+### Welcome to the my first full stack app!!!
 
 Using express, handlebars, and mysql I have built my first 
 app that uses a client, server, and database.
